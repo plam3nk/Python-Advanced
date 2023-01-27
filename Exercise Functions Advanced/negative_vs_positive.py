@@ -1,5 +1,13 @@
-def printer(positive, negative):
+def negative_positive(*args):
 
+    positive = 0
+    negative = 0
+
+    for number in args:
+        if int(number) < 0:
+            negative += int(number)
+        else:
+            positive += int(number)
     print(negative)
     print(positive)
     if abs(positive) > abs(negative):
@@ -9,14 +17,5 @@ def printer(positive, negative):
         print("The negatives are stronger than the positives")
 
 
-positive_numbers = 0
-negative_numbers = 0
-
-for number in input().split():
-    if int(number) < 0:
-        negative_numbers += int(number)
-    else:
-        positive_numbers += int(number)
-
-printer(positive_numbers, negative_numbers)
-
+input_line = input().split()
+negative_positive(*input_line)
